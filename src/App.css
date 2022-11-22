@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header--container {
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  background-color: grey;
+}
+
+.header--logo {
+  width: 75px;
+}
+
+.header--logo-text {
+  margin-right: auto;
+}
+
+.employee-image {
+  border-radius: 50%;
+}
+
+.footer--container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
