@@ -93,7 +93,7 @@ export default function Main() {
     )
 
     return (
-        <Container sx={{ my: 10 }}>
+        <Container sx={{ my: 10}}>
             <SearchBar 
                 updateQuery={(val) => handleSearchQuery(val)}
             />

@@ -2,14 +2,18 @@ import { Box, Link } from '@mui/material'
 
 export default function Footer() {
     return (
-        <Box sx={{ display: 'flex', 
-            flexDirection: 'column',
+        <Box 
+            sx={{ 
+            display: 'flex', 
+            flexDirection: {xs: 'column', sm: 'column', lg: "row"},
             alignItems: 'center',
-            gap: '8px',
+            justifyContent: 'center',
+            gap: {xs: '8px', sm: '8px', lg: '20px'} ,
             padding: '25px',
             marginTop: 'auto',
             backgroundColor: 'lightGrey'
-        }}>
+            }}
+        >
             <Link href="blank" underline="hover">
                 Employees
             </Link>

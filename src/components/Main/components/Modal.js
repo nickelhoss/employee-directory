@@ -6,15 +6,35 @@ import Modal from '@mui/material/Modal';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 'auto',
+    width: '400px',
     p: 5,
 };
+
+const mainContainerStyle = {
+    display: 'flex', 
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginY: '30px'
+}
+
+const buttonStyle = {
+    width: '75px'
+}
+
+const cardContentStyle = {
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+    gap: '8px'
+}
 
 export default function BasicModal(props) {
     return (
@@ -25,57 +45,39 @@ export default function BasicModal(props) {
             >
                 <Box sx={style}>
                     <Card>
-                        <Container 
-                            sx={{
-                                display: 'flex', 
-                                flexDirection: 'column',
-                                alignItem: 'center',
-                                margin: '10px'
-                            }}
-                        >
+                        <Container sx={mainContainerStyle}>
                             <Container 
                                 sx={{
                                     display: 'flex', 
                                     flexDirection: 'row',
                                     alignItems: 'center',
-                                    justifyContent: 'flex-end'
+                                    justifyContent: 'space-between'
                                 }}
                             >
+                                <Box sx={{flex: '1'}}></Box>
                                 <img 
                                     className='employee-image' 
                                     src={props.img} 
-                                    alt='employee headshot' 
-                                    sx={{mr:'auto'}}
+                                    alt='employee headshot'
                                 />
-                                <Button onClick={props.onClose}>X</Button>
+                                <Button onClick={props.onClose} sx={{alignSelf: 'start', flex: '1'}}>X</Button>
                             </Container>
-                            <CardContent>
-                                <CardContent sx={{display: 'flex', flexDirection: 'row'}}>
-                                    <Typography variant='h4'>{props.firstName}&nbsp;</Typography>
-                                    <Typography variant='h4'>{props.lastName}</Typography>
-                                </CardContent>
-                                <CardContent sx={{display: 'flex', flexDirection: 'column'}}>
-                                    <Typography variant='p'>{props.email}&nbsp;</Typography>
-                                    <Typography variant='p'>{props.phone}</Typography>
-                                </CardContent>
+                            <CardContent sx={cardContentStyle}>
+                                <Typography variant='h6'>{props.firstName}&nbsp;{props.lastName}</Typography>
+                                <Typography variant='p'>{props.email}</Typography>
+                                <Typography variant='p'>{props.phone}</Typography>
+                                <Divider sx={{width:'100%', my: '5px'}}/>
+                                <Typography variant='p'>{props.addressStreetNumber}&nbsp;{props.addressStreetName}</Typography>
+                                <Typography variant='p'>{props.addressCity},&nbsp;{props.addressState}&nbsp;{props.addressPostcode}</Typography>
                             </CardContent>
-                            <br />
-                            <CardContent sx={{display: 'flex', flexDirection: 'row'}}>
-                                <Button onClick={props.handlePrevClick}>
-                                    Previous
+                            <Container sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                                <Button onClick={props.handlePrevClick} variant="contained" sx={buttonStyle}>
+                                    Prev
                                 </Button>
-                                    <CardContent sx={{display: 'flex', flexDirection: 'column'}}>
-                                        <Typography variant='p'>{props.addressStreetNumber}&nbsp;</Typography>
-                                        <Typography variant='p'>{props.addressStreetName}</Typography>
-                                        <br />
-                                        <Typography variant='p'>{props.addressCity},&nbsp;</Typography>
-                                        <Typography variant='p'>{props.addressState}&nbsp;</Typography>
-                                        <Typography variant='p'>{props.addressPostcode}</Typography>
-                                    </CardContent>
-                                <Button onClick={props.handleNextClick}>
+                                <Button onClick={props.handleNextClick} variant="contained" sx={buttonStyle}>
                                     Next
                                 </Button>
-                            </CardContent>
+                            </Container>
                         </Container>
                     </Card>    
                 </Box>
