@@ -9,7 +9,6 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
-//TODO: figure out why header doesn't span the full page width on mobile
 
 function DropMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);

@@ -14,7 +14,6 @@ export default function SearchBar(props) {
     return (
         <Box sx={{ 
             padding: '30px',
-            marginTop: '-50px', // TODO: figure out what's causing the space here then remove the negative margin
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

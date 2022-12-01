@@ -10,7 +10,7 @@ export default function Footer() {
             justifyContent: 'center',
             gap: {xs: '8px', sm: '20px'} ,
             padding: '25px',
-            marginTop: 'auto',
+            marginTop: '40px',
             backgroundColor: 'lightGrey'
             }}
         >
