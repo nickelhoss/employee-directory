@@ -42,6 +42,7 @@ export default function BasicModal(props) {
             <Modal 
                 open={props.open}
                 onClose={props.onClose}
+                sx={{outline: '0'}}
             >
                 <Box sx={style}>
                     <Card>

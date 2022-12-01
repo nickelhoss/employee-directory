@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import BasicModal from './components/Modal';
 import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 
 export default function Main() {
     
@@ -16,14 +15,14 @@ export default function Main() {
     const [displayedEmployees, setDisplayedEmployees] = useState([])
 
     const progressBar = (
-        <Box sx={{ display: 'flex' }}>
+        <Grid item sx={{ display: 'flex', justifyContent: 'center', my: '150px' }}>
             <CircularProgress />
-        </Box>
+        </Grid>
     )
 
     useEffect(() => {
         async function getEmployeeData() {
-            const res = await fetch('https://randomuser.me/api/?results=10&nat=us');
+            const res = await fetch('https://randomuser.me/api/?results=12&nat=us');
             const data = await res.json();
             setDbEmployees(data.results);
             setDisplayedEmployees(data.results);
@@ -87,7 +86,7 @@ export default function Main() {
     }
 
     const employeeGrid =  (
-        <Grid container direction='column' spacing={5}>
+        <Grid container rowSpacing={5} columnSpacing={3}>
             {(!employeeCardData.length) ? <h4 style={{margin: "150px"}}>No Results</h4> : employeeCardData }  
         </Grid>
     )
@@ -97,7 +96,7 @@ export default function Main() {
             <SearchBar 
                 updateQuery={(val) => handleSearchQuery(val)}
             />
-            <Container maxWidth="md">
+            <Container>
                 {(isLoading) ? progressBar : employeeGrid}
             </Container>
             <BasicModal 
@@ -115,7 +114,7 @@ export default function Main() {
                 addressPostcode={displayedEmployees[currentCardIndex]?.location?.postcode}
                 handleNextClick={handleNextClick}
                 handlePrevClick={handlePrevClick}
-                />
+            />
         </Container>
     )
 }

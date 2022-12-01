@@ -5,10 +5,10 @@ export default function Footer() {
         <Box 
             sx={{ 
             display: 'flex', 
-            flexDirection: {xs: 'column', sm: 'column', lg: "row"},
+            flexDirection: { xs: 'column', sm: "row"},
             alignItems: 'center',
             justifyContent: 'center',
-            gap: {xs: '8px', sm: '8px', lg: '20px'} ,
+            gap: {xs: '8px', sm: '20px'} ,
             padding: '25px',
             marginTop: 'auto',
             backgroundColor: 'lightGrey'
