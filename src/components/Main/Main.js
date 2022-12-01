@@ -87,7 +87,7 @@ export default function Main() {
 
     const employeeGrid =  (
         <Grid container rowSpacing={5} columnSpacing={3}>
-            {(!employeeCardData.length) ? <h4 style={{margin: "150px"}}>No Results</h4> : employeeCardData }  
+            {(!employeeCardData.length) ? <h2 style={{margin: "150px auto"}}>No results...</h2> : employeeCardData }  
         </Grid>
     )
 
